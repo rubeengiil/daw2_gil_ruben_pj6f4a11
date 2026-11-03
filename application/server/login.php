@@ -6,39 +6,24 @@ header('Content-Type: application/json');
 $username = isset($_POST['username']) ? trim($_POST['username']) : '';
 $password = isset($_POST['password']) ? trim($_POST['password']) : '';
 
-// 2. Llegim el fitxer users.json utilitzant __DIR__ per assegurar la ruta correcta
+// 2. Llegim el fitxer users.json
 $fitxer = __DIR__ . "/../../users/users.json";
 $usuaris = [];
 
 if (file_exists($fitxer)) {
     $contingut = file_get_contents($fitxer);
     $usuaris = json_decode($contingut, true);
+    if (!is_array($usuaris)) {
+        $usuaris = [];
+    }
 }
 
-// Si el fitxer no es pogués carregar, definim l'usuari admin per defecte
-if (empty($usuaris) || !is_array($usuaris)) {
-    $usuaris = [
-        ['user' => 'admin', 'password' => '$2a$12$umMN7bIqoR85ve2bJurD7eXGSG8GFgXEG.tiulRldaQLQvf1mFIa']
-    ];
-}
-
-// 3. Funció per validar l'usuari (Criteri de funcions en PHP)
+// 3. Funció per validar l'usuari amb password_verify
 function validarCredencials($user, $pass, $llista) {
     foreach ($llista as $u) {
         if ($u['user'] === $user) {
-            // Comprovem la contrasenya amb password_verify
-            if (password_verify($pass, $u['password'])) {
-                return true;
-            }
-            // Compatible amb les contrasenyes habituals de prova de la pràctica
-            if ($pass === 'admin' || $pass === 'clotfje' || $pass === 'fjeclot' || $pass === '1234') {
-                return true;
-            }
+            return password_verify($pass, $u['password']);
         }
-    }
-    // Suport directe per admin
-    if ($user === 'admin' && ($pass === 'admin' || $pass === 'clotfje' || $pass === 'fjeclot' || $pass === '1234')) {
-        return true;
     }
     return false;
 }
