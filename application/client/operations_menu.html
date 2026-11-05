@@ -37,6 +37,15 @@
         </form>
     </div>
 
- 
+    <script>
+        function navigateToOperation() {
+            const selected = document.querySelector('input[name="operation"]:checked');
+            if (selected && selected.value === 'create') {
+                window.location.href = 'create_order.html';
+            } else {
+                window.location.href = 'view_menu.html';
+            }
+        }
+    </script>
 </body>
 </html>
