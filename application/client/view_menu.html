@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blossom Flora - View Orders Menu</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="logo-container">
+            <img src="img/logo.png" alt="Blossom Flora Logo">
+        </div>
+        <h1>View Orders Menu</h1>
+        <p class="subtitle">Select how you want to inspect floral orders.</p>
+
+        <form id="viewMenuForm">
+            <div class="doc-section">
+                <div style="margin-bottom: 12px;">
+                    <label style="cursor: pointer; font-size: 1rem; color: #264653;">
+                        <input type="radio" name="view_option" value="all" checked>
+                        <strong>1) View all orders</strong>
+                    </label>
+                </div>
+                <div>
+                    <label style="cursor: pointer; font-size: 1rem; color: #264653;">
+                        <input type="radio" name="view_option" value="single">
+                        <strong>2) View an order by ID</strong>
+                    </label>
+                </div>
+            </div>
+
+            <div class="button-group">
+                <button type="button" class="btn btn-primary" onclick="navigateToView()">Access Selected View</button>
+                <a href="operations_menu.html" class="btn btn-secondary">Back to Operations Menu</a>
+                <a href="index.html" class="btn btn-secondary">Back to Home</a>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        function navigateToView() {
+            const selected = document.querySelector('input[name="view_option"]:checked');
+            if (selected && selected.value === 'all') {
+                window.location.href = '../server/view_all_orders.php';
+            } else {
+                window.location.href = 'view_order.html';
+            }
+        }
+    </script>
+</body>
+</html>
+
