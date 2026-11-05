@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blossom Flora - Operations Menu</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="logo-container">
+            <img src="img/logo.png" alt="Blossom Flora Logo">
+        </div>
+        <h1>Operations Menu</h1>
+        <p class="subtitle">Select an operation to proceed with flower order management.</p>
+
+        <form id="operationsForm">
+            <div class="doc-section" style="border-left-color: #2a9d8f;">
+                <div style="margin-bottom: 12px;">
+                    <label style="cursor: pointer; font-size: 1rem; color: #264653;">
+                        <input type="radio" name="operation" value="create" checked>
+                        <strong>1) Create a new order</strong>
+                    </label>
+                </div>
+                <div>
+                    <label style="cursor: pointer; font-size: 1rem; color: #264653;">
+                        <input type="radio" name="operation" value="view">
+                        <strong>2) View orders</strong>
+                    </label>
+                </div>
+            </div>
+
+            <div class="button-group">
+                <button type="button" class="btn btn-primary" onclick="navigateToOperation()">Access Selected Operation</button>
+                <a href="index.html" class="btn btn-secondary">Back to Home</a>
+            </div>
+        </form>
+    </div>
+
+ 
+</body>
+</html>
