@@ -1,10 +1,8 @@
 <?php
-// view_all_orders.php - Visualització de totes les comandes (Funcionalitat 7)
-// Basat en l'exemple de classe llegixTotRegist.php
-
+// view_all_orders.php - Visualització de totes les comandes
 $filename = __DIR__ . "/../../orders/orders.json";
 
-// Si el fitxer no existeix, generem resposta 404 (Requisit PDF 7.b)
+// Si el fitxer no existeix, generem resposta 404
 if (!file_exists($filename)) {
     http_response_code(404);
 ?>
@@ -18,7 +16,6 @@ if (!file_exists($filename)) {
 <body>
     <div class="container">
         <h1>Storage Error (404 Not Found)</h1>
-        <p>The orders storage file (orders.json) could not be found or opened.</p>
         <div class="button-group">
             <a href="../client/view_menu.html" class="btn btn-secondary">Back to Orders View Menu</a>
             <a href="../client/operations_menu.html" class="btn btn-secondary">Back to Operations Menu</a>
