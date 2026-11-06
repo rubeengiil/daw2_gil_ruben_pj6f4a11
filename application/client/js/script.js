@@ -110,8 +110,8 @@ function submitOrder() {
             result.innerHTML = "<strong>Order Registered Successfully!</strong><br>" +
                                "Order Code: " + dades.order_id + "<br>" +
                                "Subtotal: " + dades.subtotal + " €<br>" +
-                               "VAT (21%): " + dades.vat_amount + " €<br>" +
-                               "<strong>Total Price (with 21% VAT): " + dades.total_with_tax + " €</strong>";
+                               "IVA (21%): " + dades.vat_amount + " €<br>" +
+                               "<strong>Total Price (with 21% IVA): " + dades.total_with_tax + " €</strong>";
 
             // Reiniciar formulari
             form.reset();

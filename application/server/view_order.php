@@ -42,7 +42,7 @@ if (is_array($dades)) {
     }
 }
 
-// 3. Si no es troba la comanda, resposta 404 (Requisit PDF 8.c)
+// 3. Si no es troba la comanda, resposta 404
 if ($trobat === null) {
     http_response_code(404);
 ?>
@@ -56,7 +56,7 @@ if ($trobat === null) {
 <body>
     <div class="container">
         <h1>Order Not Found (404 Not Found)</h1>
-        <p>No floral order was found with Order ID: "<?= htmlspecialchars($order_id) ?>".</p>
+        <p>No floral order was found with Order ID: "<?= ($order_id) ?>".</p>
         <div class="button-group">
             <a href="../client/view_menu.html" class="btn btn-secondary">Back to Orders View Menu</a>
             <a href="../client/operations_menu.html" class="btn btn-secondary">Back to Operations Menu</a>
@@ -105,8 +105,8 @@ function formatarFlors($items) {
             <tr><th>Phone</th><td><?= htmlspecialchars($trobat['customer_phone']) ?></td></tr>
             <tr><th>Flowers Ordered</th><td><?= htmlspecialchars(formatarFlors($trobat['items'])) ?></td></tr>
             <tr><th>Subtotal</th><td><?= htmlspecialchars($trobat['subtotal']) ?> €</td></tr>
-            <tr><th>VAT (21%)</th><td><?= htmlspecialchars($trobat['vat_amount']) ?> €</td></tr>
-            <tr><th>Total with VAT</th><td><strong><?= htmlspecialchars($trobat['total_with_tax']) ?> €</strong></td></tr>
+            <tr><th>IVA (21%)</th><td><?= htmlspecialchars($trobat['vat_amount']) ?> €</td></tr>
+            <tr><th>Total with IVA</th><td><strong><?= htmlspecialchars($trobat['total_with_tax']) ?> €</strong></td></tr>
             <?php if (!empty($trobat['date'])): ?>
             <tr><th>Date</th><td><?= htmlspecialchars($trobat['date']) ?></td></tr>
             <?php endif; ?>

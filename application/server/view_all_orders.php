@@ -73,8 +73,8 @@ function formatarFlors($items) {
                     <th>Phone</th>
                     <th>Flowers Ordered</th>
                     <th>Subtotal</th>
-                    <th>VAT (21%)</th>
-                    <th>Total with VAT</th>
+                    <th>IVA (21%)</th>
+                    <th>Total with IVA</th>
                 </tr>
                 <?php foreach ($dades as $comanda): ?>
                 <tr>
