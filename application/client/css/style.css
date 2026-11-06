@@ -1,3 +1,4 @@
+/* style.css - Estils mínims i senzills */
 
 body {
     font-family: Arial, sans-serif;
@@ -5,6 +6,7 @@ body {
     margin: 20px;
 }
 
+/* Contenidor centrat bàsic */
 .container {
     background-color: #ffffff;
     max-width: 500px;
@@ -14,11 +16,27 @@ body {
     text-align: center;
 }
 
+/* Contenidor ample per a taules de comandes */
+.wide-container {
+    background-color: #ffffff;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #cccccc;
+    text-align: center;
+}
+
+.table-responsive {
+    overflow-x: auto;
+    margin: 15px 0;
+}
+
 h1, h2, h3 {
     color: #2a7a58;
     margin-bottom: 10px;
 }
 
+/* Camps de formulari */
 .form-group, .product-item, .doc-section {
     margin-bottom: 12px;
     text-align: left;
@@ -45,6 +63,7 @@ input[type="number"] {
     display: inline-block;
 }
 
+/* Botons senzills */
 button, .btn {
     display: inline-block;
     padding: 8px 14px;
@@ -65,6 +84,7 @@ button, .btn {
     background-color: #d96b52;
 }
 
+/* Caixes de missatges */
 .msg-box {
     display: none;
     padding: 10px;
@@ -83,6 +103,7 @@ button, .btn {
     color: #006000;
 }
 
+/* Taula bàsica per a les consultes */
 table, th, td {
     border: 1px solid #999999;
     border-collapse: collapse;
