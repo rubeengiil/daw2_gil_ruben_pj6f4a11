@@ -1,5 +1,5 @@
 <?php
-// login.php - Basat en sm6ex5.php (POST + JSON) i llegixTotRegist.php (JSON)
+// login.php
 header('Content-Type: application/json');
 
 // 1. Recollim usuari i contrasenya enviats pel formulari
@@ -28,7 +28,7 @@ function validarCredencials($user, $pass, $llista) {
     return false;
 }
 
-// 4. Comprovem i enviem la resposta en format JSON (com a sm6ex5.php)
+// 4. Comprovem i enviem la resposta en format JSON
 if (validarCredencials($username, $password, $usuaris)) {
     echo json_encode([
         'success' => true,
